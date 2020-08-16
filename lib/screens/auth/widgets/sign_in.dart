@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 import 'package:lit_firebase_ui_demo/screens/auth/widgets/decoration_functions.dart';
+import 'package:lit_firebase_ui_demo/screens/auth/widgets/provider_button.dart';
 import 'package:lit_firebase_ui_demo/screens/auth/widgets/sign_in_up_bar.dart';
 
-import '../../../config/palette.dart';
 import 'title.dart';
 
 class SignIn extends StatelessWidget {
@@ -54,26 +54,65 @@ class SignIn extends StatelessWidget {
                       context.signInWithEmailAndPassword();
                     },
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: InkWell(
-                      splashColor: Colors.white,
-                      onTap: () {
-                        onRegisterClicked?.call();
-                      },
-                      child: const Text(
-                        'Sign up',
-                        style: TextStyle(
-                          fontSize: 16,
-                          decoration: TextDecoration.underline,
-                          color: Palette.darkBlue,
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
+            Expanded(
+              flex: 2,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  children: [
+                    const Text(
+                      "or sign in with",
+                      style: TextStyle(
+                        color: Colors.black54,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 24.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ProviderButton(
+                          context: context,
+                          signInType: "google",
+                        ),
+                        ProviderButton(
+                          context: context,
+                          signInType: "apple",
+                        ),
+                        ProviderButton(
+                          context: context,
+                          signInType: "twitter",
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    InkWell(
+                        splashColor: Colors.white,
+                        onTap: () {
+                          onRegisterClicked?.call();
+                        },
+                        child: RichText(
+                          text: const TextSpan(
+                            text: "Don't have an account? ",
+                            style: TextStyle(color: Colors.black54),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: 'SIGN UP',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

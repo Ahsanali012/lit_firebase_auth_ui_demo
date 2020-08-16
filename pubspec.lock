@@ -278,10 +278,10 @@ packages:
   lit_firebase_auth:
     dependency: "direct main"
     description:
-      path: "/Users/gordon/Documents/Fun with Flutter/projects/lit_firebase_auth"
-      relative: false
-    source: path
-    version: "0.2.1"
+      name: lit_firebase_auth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.2"
   matcher:
     dependency: transitive
     description:

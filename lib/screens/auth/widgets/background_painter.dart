@@ -109,7 +109,7 @@ class BackgroundPainter extends CustomPainter {
       ),
       Point(
         size.width,
-        lerpDouble(size.height / 2, size.height * 3 / 4, liquidAnim.value),
+        lerpDouble(size.height / 2.3, size.height * 3 / 4, liquidAnim.value),
       ),
     ]);
     canvas.drawPath(path, bluePaint);
@@ -133,7 +133,7 @@ class BackgroundPainter extends CustomPainter {
       [
         Point(
           size.width / 4,
-          lerpDouble(size.height / 2, size.height * 3 / 4, liquidAnim.value),
+          lerpDouble(size.height / 2.3, size.height * 3 / 4, liquidAnim.value),
         ),
         Point(
           size.width * 3 / 5,
