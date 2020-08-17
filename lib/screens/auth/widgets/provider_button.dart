@@ -28,9 +28,8 @@ class _ProviderButtonState extends State<ProviderButton> {
                 color: Colors.black26,
               ),
             ),
-            child: Image.asset(
-              "assets/google_icon.png",
-              width: 30.0,
+            child: LitAuthIcon.google(
+              size: const Size(30, 30),
             ),
           ),
         );
@@ -40,7 +39,7 @@ class _ProviderButtonState extends State<ProviderButton> {
         return InkWell(
           onTap: () => context.signInWithApple(),
           child: Container(
-            padding: const EdgeInsets.all(17.0),
+            padding: const EdgeInsets.all(12.0),
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
@@ -48,9 +47,11 @@ class _ProviderButtonState extends State<ProviderButton> {
                 color: Colors.black26,
               ),
             ),
-            child: Image.asset(
-              "assets/apple_icon.png",
-              width: 24.0,
+            child: Transform.translate(
+              offset: const Offset(-1, 0),
+              child: LitAuthIcon.appleBlack(
+                size: const Size(30, 30),
+              ),
             ),
           ),
         );
@@ -67,9 +68,11 @@ class _ProviderButtonState extends State<ProviderButton> {
                 color: Colors.black26,
               ),
             ),
-            child: Image.asset(
-              "assets/twitter_icon.png",
-              width: 30.0,
+            child: Transform.scale(
+              scale: 1.2,
+              child: LitAuthIcon.twitter(
+                size: const Size(30, 30),
+              ),
             ),
           ),
         );
